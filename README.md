@@ -18,6 +18,14 @@
 
 ---
 
+## Technologies Used
+
+- **Android SDK**
+- **Java**
+- **XML for UI Design**
+- **Gradle for Build Management**
+
+---
 
 ### Upcoming Features:
 - **Messaging and Notifications:** Tabs are placeholders in the current version, with plans to implement in the next release.
