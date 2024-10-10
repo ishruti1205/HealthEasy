@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/lighterWhiteColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_menu_back"
+                app:tint="@color/blackColor"
+                android:rotation="90"
+                android:clickable="true"
+                android:contentDescription="Back Icon"
+                android:layout_gravity="start"/>
+
+            <!-- Spacer View to push icons to the ends -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/blackColor"/>
+
+            <!-- Another spacer view to push the title to the center -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <!-- Notifications Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/notifyImg"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/reminder_logo"
+                android:padding="5dp"
+                app:tint="@color/blueColor"
+                android:background="@drawable/rectangle_shape"
+                android:backgroundTint="@color/lighterGrayColor"
+                android:contentDescription="Notifications Icon"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="20dp"
+                android:text="Notifications"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/blackColor" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/notificationsToggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:thumbTint="@color/blueColor"
+                app:trackTint="@color/lighterGrayColor"
+                />
+
+        </LinearLayout>
+
+        <!-- Appointments Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/appointments_logo"
+                android:padding="7dp"
+                app:tint="@color/blueColor"
+                android:background="@drawable/rectangle_shape"
+                android:backgroundTint="@color/lighterGrayColor"
+                android:contentDescription="Appointments Icon" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="20dp"
+                android:text="My Appointments"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/blackColor" />
+
+            <ImageView
+                android:id="@+id/appointmentSectionBtn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:padding="3dp"
+                android:src="@drawable/ic_menu_back"
+                app:tint="@color/whiteColor"
+                android:background="@drawable/circle_shape"
+                android:backgroundTint="@color/blueColor"
+                android:rotation="270"
+                android:contentDescription="Appointments Section Button"
+                android:clickable="true"/>
+        </LinearLayout>
+
+        <!-- Payments Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/payments_logo"
+                android:padding="5dp"
+                app:tint="@color/blueColor"
+                android:background="@drawable/rectangle_shape"
+                android:backgroundTint="@color/lighterGrayColor"
+                android:contentDescription="Payments Icon" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="20dp"
+                android:text="My Payments"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/blackColor" />
+
+            <ImageView
+                android:id="@+id/paymentSectionBtn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:padding="3dp"
+                android:src="@drawable/ic_menu_back"
+                app:tint="@color/whiteColor"
+                android:background="@drawable/circle_shape"
+                android:backgroundTint="@color/blueColor"
+                android:rotation="270"
+                android:contentDescription="Payments Section Button"
+                android:clickable="true"/>
+        </LinearLayout>
+
+        <!-- Profile Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/profile_logo"
+                app:tint="@color/blueColor"
+                android:background="@drawable/rectangle_shape"
+                android:backgroundTint="@color/lighterGrayColor"
+                android:contentDescription="Profile Icon" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="20dp"
+                android:text="My Profile"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/blackColor" />
+
+            <ImageView
+                android:id="@+id/profileSectionBtn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:padding="3dp"
+                android:src="@drawable/ic_menu_back"
+                app:tint="@color/whiteColor"
+                android:background="@drawable/circle_shape"
+                android:backgroundTint="@color/blueColor"
+                android:rotation="270"
+                android:contentDescription="Profile Section Button"
+                android:clickable="true"/>
+        </LinearLayout>
+
+        <!-- Language Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/language_logo"
+                android:padding="5dp"
+                app:tint="@color/blueColor"
+                android:background="@drawable/rectangle_shape"
+                android:backgroundTint="@color/lighterGrayColor"
+                android:contentDescription="Language Icon" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="20dp"
+                android:text="Language"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/blackColor" />
+
+            <ImageView
+                android:id="@+id/languageSectionBtn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:padding="3dp"
+                android:src="@drawable/ic_menu_back"
+                app:tint="@color/whiteColor"
+                android:background="@drawable/circle_shape"
+                android:backgroundTint="@color/blueColor"
+                android:rotation="270"
+                android:contentDescription="Language Section Button"
+                android:clickable="true"/>
+        </LinearLayout>
+
+        <!-- Support Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/support_logo"
+                android:padding="5dp"
+                app:tint="@color/blueColor"
+                android:background="@drawable/rectangle_shape"
+                android:backgroundTint="@color/lighterGrayColor"
+                android:contentDescription="Support Icon" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="20dp"
+                android:text="Support"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/blackColor" />
+
+            <ImageView
+                android:id="@+id/supportSectionBtn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:padding="3dp"
+                android:src="@drawable/ic_menu_back"
+                app:tint="@color/whiteColor"
+                android:background="@drawable/circle_shape"
+                android:backgroundTint="@color/blueColor"
+                android:rotation="270"
+                android:contentDescription="Support Section Button"
+                android:clickable="true"/>
+        </LinearLayout>
+
+        <!-- Logout Section -->
+        <LinearLayout
+            android:id="@+id/logoutSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logout_logo"
+                android:padding="5dp"
+                app:tint="@color/blueColor"
+                android:background="@drawable/rectangle_shape"
+                android:backgroundTint="@color/lightGrayColor"
+                android:contentDescription="Logout Icon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Logout"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/blackColor" />
+        </LinearLayout>
+
+        <!-- Space to push the footer to the bottom -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Footer section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp"
+            android:background="@drawable/rectangle_shape"
+            android:backgroundTint="@color/whiteColor">
+
+            <ImageView
+                android:id="@+id/homeTab"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:clickable="true"
+                android:src="@drawable/home_logo"
+                android:contentDescription="Home Icon"
+                app:tint="@color/grayColor" />
+
+            <ImageView
+                android:id="@+id/favTab"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:clickable="true"
+                android:src="@drawable/heart_logo"
+                android:contentDescription="Favourites Icon"
+                app:tint="@color/grayColor" />
+
+            <ImageView
+                android:id="@+id/msgTab"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:clickable="true"
+                android:src="@drawable/message_logo"
+                android:contentDescription="Chat Icon"
+                app:tint="@color/grayColor" />
+
+            <ImageView
+                android:id="@+id/notifyTab"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:clickable="true"
+                android:src="@drawable/reminder_logo"
+                android:contentDescription="Notification Bell Icon"
+                app:tint="@color/grayColor"/>
+
+            <ImageView
+                android:id="@+id/accountTab"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:clickable="true"
+                android:src="@drawable/account_logo"
+                android:contentDescription="Account Icon"
+                app:tint="@color/grayColor" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

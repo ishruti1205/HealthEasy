@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lighterWhiteColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@color/blueColor"
+            android:paddingHorizontal="20dp">
+
+            <!-- Back Button -->
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_menu_back"
+                app:tint="@color/whiteColor"
+                android:rotation="90"
+                android:clickable="true"
+                android:contentDescription="Back Icon"/>
+
+            <!-- Heading for Doctors -->
+            <TextView
+                android:id="@+id/favouriteHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="My Favourite Doctors"
+                android:textColor="@color/whiteColor"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <!-- RecyclerView for Favourite Doctors -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewFavDoctors"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="10dp"
+            android:paddingTop="10dp"/>
+
+        <!-- Footer section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp"
+            android:background="@drawable/rectangle_shape"
+            android:backgroundTint="@color/whiteColor">
+
+            <ImageView
+                android:id="@+id/homeTab"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:clickable="true"
+                android:src="@drawable/home_logo"
+                android:contentDescription="Home Icon"
+                app:tint="@color/grayColor" />
+
+            <ImageView
+                android:id="@+id/favTab"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:clickable="true"
+                android:src="@drawable/heart_logo"
+                android:contentDescription="Favourites Icon"
+                app:tint="@color/grayColor" />
+
+            <ImageView
+                android:id="@+id/msgTab"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:clickable="true"
+                android:src="@drawable/message_logo"
+                android:contentDescription="Chat Icon"
+                app:tint="@color/grayColor" />
+
+            <ImageView
+                android:id="@+id/notifyTab"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:clickable="true"
+                android:src="@drawable/reminder_logo"
+                android:contentDescription="Notification Bell Icon"
+                app:tint="@color/grayColor"/>
+
+            <ImageView
+                android:id="@+id/accountTab"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:clickable="true"
+                android:src="@drawable/account_logo"
+                android:contentDescription="Account Icon"
+                app:tint="@color/grayColor" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

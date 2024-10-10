@@ -1,0 +1,95 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:paddingHorizontal="1dp"
+    android:paddingVertical="15dp"
+    android:gravity="center"
+    android:background="@drawable/rectangle_shape"
+    android:backgroundTint="@color/whiteColor">
+
+    <ImageView
+        android:id="@+id/doctorImg"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/user_logo" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:paddingHorizontal="0.5dp"
+            android:src="@android:drawable/btn_star_big_on"
+            app:tint="#ffc300"
+            android:contentDescription="1 Star"/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:paddingHorizontal="0.5dp"
+            android:src="@android:drawable/btn_star_big_on"
+            app:tint="#ffc300"
+            android:contentDescription="2 Star"/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:paddingHorizontal="0.5dp"
+            android:src="@android:drawable/btn_star_big_on"
+            app:tint="#ffc300"
+            android:contentDescription="3 Star"/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:paddingHorizontal="0.5dp"
+            android:src="@android:drawable/btn_star_big_on"
+            app:tint="#ffc300"
+            android:contentDescription="4 Star"/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:paddingHorizontal="0.5dp"
+            android:src="@android:drawable/btn_star_big_on"
+            app:tint="#ffc300"
+            android:contentDescription="5 Star"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/doctorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/blackColor"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="Dr. Lorem Ipsum" />
+
+    <Button
+        android:id="@+id/viewProfileBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="View Profile"
+        android:textSize="16sp"
+        android:textColor="@color/whiteColor"
+        android:textStyle="bold"
+        android:background="@drawable/rectangle_shape"
+        app:backgroundTint="@color/blueColor"/>
+
+</LinearLayout>

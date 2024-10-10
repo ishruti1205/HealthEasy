@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HealthEasy</string>
+
+    <string name="forgotLink">
+        <a href="https://www.something.com">Forgot Password?</a>
+    </string>
+
+</resources>

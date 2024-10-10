@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lighterWhiteColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/blueLogo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="20dp"
+                    android:gravity="center_vertical"
+                    android:contentDescription="Circle Logo"
+                    android:src="@drawable/blue_logo"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/hiUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Hi, User!"
+                        android:textSize="22sp"
+                        android:textColor="@color/blackColor"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/feeling"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="How are you feeling now?"
+                        android:textSize="18sp"
+                        android:textColor="@color/blackColor" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="20dp"
+                    android:background="@drawable/rectangle_shape"
+                    android:backgroundTint="@color/lightBlueColor">
+
+                    <TextView
+                        android:id="@+id/line1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stay Healthy with HealthEasy!"
+                        android:textSize="20sp"
+                        android:textColor="@color/whiteColor"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/line2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/line1"
+                        android:layout_marginTop="5dp"
+                        android:text="Start your health journey!"
+                        android:textSize="16sp"
+                        android:textColor="@color/whiteColor" />
+
+                    <TextView
+                        android:id="@+id/line3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/line2"
+                        android:layout_marginTop="5dp"
+                        android:text="Need Assistance?"
+                        android:textSize="16sp"
+                        android:textColor="@color/whiteColor" />
+
+                    <Button
+                        android:id="@+id/loginButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/line3"
+                        android:layout_marginTop="10dp"
+                        android:text="Meet Online"
+                        android:textSize="16sp"
+                        android:textColor="@color/whiteColor"
+                        android:background="@drawable/rectangle_shape"
+                        app:backgroundTint="@color/blueColor"/>
+
+                    <ImageView
+                        android:id="@+id/banner"
+                        android:layout_width="100dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@id/line1"
+                        android:layout_marginTop="10dp"
+                        android:contentDescription="Banner"
+                        android:src="@drawable/banner" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/servicesHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Our Services"
+                    android:textSize="20sp"
+                    android:textColor="@color/blackColor"
+                    android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- RecyclerView for Specialization Entries -->
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerViewSpecializations"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Footer section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp"
+            android:background="@drawable/rectangle_shape"
+            android:backgroundTint="@color/whiteColor">
+
+            <ImageView
+                android:id="@+id/homeTab"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:clickable="true"
+                android:src="@drawable/home_logo"
+                android:contentDescription="Home Icon"
+                app:tint="@color/grayColor" />
+
+            <ImageView
+                android:id="@+id/favTab"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:clickable="true"
+                android:src="@drawable/heart_logo"
+                android:contentDescription="Favourites Icon"
+                app:tint="@color/grayColor" />
+
+            <ImageView
+                android:id="@+id/msgTab"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:clickable="true"
+                android:src="@drawable/message_logo"
+                android:contentDescription="Chat Icon"
+                app:tint="@color/grayColor" />
+
+            <ImageView
+                android:id="@+id/notifyTab"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:clickable="true"
+                android:src="@drawable/reminder_logo"
+                android:contentDescription="Notification Bell Icon"
+                app:tint="@color/grayColor"/>
+
+            <ImageView
+                android:id="@+id/accountTab"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:clickable="true"
+                android:src="@drawable/account_logo"
+                android:contentDescription="Account Icon"
+                app:tint="@color/grayColor" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
