@@ -49,7 +49,7 @@
 <img src="Screen Recordings & Screenshots/9.png" height = "400" width="200"/>  <img src="Screen Recordings & Screenshots/10.png" height = "400" width="200"/>  <img src="Screen Recordings & Screenshots/11.png" height = "400" width="200"/> <img src="Screen Recordings & Screenshots/12.png" height = "400" width="200"/>
 <img src="Screen Recordings & Screenshots/13.png" height = "400" width="200"/>  <img src="Screen Recordings & Screenshots/14.png" height = "400" width="200"/>  <img src="Screen Recordings & Screenshots/15.png" height = "400" width="200"/> <img src="Screen Recordings & Screenshots/16.png" height = "400" width="200"/>
 <img src="Screen Recordings & Screenshots/17.png" height = "400" width="200"/>  <img src="Screen Recordings & Screenshots/18.png" height = "400" width="200"/>  
-<img src="Screen Recordings & Screenshots/19.jpg" height = "200" width="400"/> <img src="Screen Recordings & Screenshots/20.jpg" height = "200" width="400"/> <img src="Screen Recordings & Screenshots/21.jpg" height = "200" width="400"/>
+<img src="Screen Recordings & Screenshots/19.jpg" height = "500" width="700"/> <img src="Screen Recordings & Screenshots/20.jpg" height = "500" width="700"/> <img src="Screen Recordings & Screenshots/21.jpg" height = "500" width="700"/>
 
 ### Screen Recordings
 
