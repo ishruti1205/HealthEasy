@@ -1,13 +1,12 @@
 package com.example.healtheasy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.method.HideReturnsTransformationMethod;
-import android.text.method.PasswordTransformationMethod;
-import android.view.View;
+import android.util.Log;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +20,9 @@ public class MyProfileActivity extends AppCompatActivity {
     private TextInputLayout passwordInputLayout;
     private TextInputEditText passwordTextView;
     private ImageView backBtn;
+    private Button updateProfileButton;
+
+    private static final String TAG = "MyProfileActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,45 +34,54 @@ public class MyProfileActivity extends AppCompatActivity {
         emailTextView = findViewById(R.id.emailTextView);
         passwordInputLayout = findViewById(R.id.passwordInputLayout);
         passwordTextView = findViewById(R.id.passwordTextView);
+        backBtn = findViewById(R.id.backBtn);
 
-        // Retrieve user data from SharedPreferences specific to the logged-in user
-        SharedPreferences sharedPreferences = getSharedPreferences("userPrefs_" + getUsername(), MODE_PRIVATE);
-        String username = sharedPreferences.getString("username", "N/A");
-        String email = sharedPreferences.getString("email", "N/A");
-        String password = sharedPreferences.getString("password", "N/A");
-
-        // Set user data to TextViews
-        usernameTextView.setText(username);
-        emailTextView.setText(email);
-        passwordTextView.setText(password);
-
-        // Set click listener for the password visibility toggle icon
-        passwordInputLayout.setEndIconOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Toggle password visibility for the password field
-                togglePasswordVisibility(passwordTextView);
-            }
-        });
 
         // Back button click listener
-        backBtn = findViewById(R.id.backBtn);
         backBtn.setOnClickListener(v -> onBackPressed());
+
+
+
+        // Load profile data
+        reloadProfileData();
     }
 
-    private void togglePasswordVisibility(TextInputEditText editText) {
-        if (editText.getTransformationMethod() instanceof PasswordTransformationMethod) {
-            // Password is currently hidden, show it
-            editText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-        } else {
-            // Password is currently shown, hide it
-            editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+    @Override
+    protected void onResume() {
+        super.onResume();
+        reloadProfileData(); // Refresh profile data when the activity resumes
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            reloadProfileData(); // Reload the latest data
         }
-        editText.setSelection(editText.getText().length()); // Keep cursor at the end
     }
 
-    private String getUsername() {
-        SharedPreferences preferences = getSharedPreferences("userPrefs", Context.MODE_PRIVATE);
-        return preferences.getString("username", ""); // Retrieve username from SharedPreferences, Default value is empty string if not found
+    private void reloadProfileData() {
+        Log.d(TAG, "reloadProfileData called");
+
+        // Fetch the latest username from global SharedPreferences
+        SharedPreferences globalPrefs = getSharedPreferences("userPrefs", MODE_PRIVATE);
+        String currentUsername = globalPrefs.getString("username", "N/A");
+
+        // Fetch user-specific data using the latest username
+        SharedPreferences sharedPreferences = getSharedPreferences("userPrefs_" + currentUsername, MODE_PRIVATE);
+        String username = sharedPreferences.getString("username", "N/A");
+        String email = sharedPreferences.getString("email", "N/A");
+        String updatedPassword = sharedPreferences.getString("password", "N/A");
+
+        // Log the fetched data
+        Log.d(TAG, "reloadProfileData: Username: " + username);
+        Log.d(TAG, "reloadProfileData: Email: " + email);
+        Log.d(TAG, "reloadProfileData: Password: " + updatedPassword);
+
+        // Update UI with the latest data
+        usernameTextView.setText(username);
+        emailTextView.setText(email);
+        passwordTextView.setText(updatedPassword);
     }
 }

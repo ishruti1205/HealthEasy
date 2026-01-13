@@ -13,6 +13,16 @@
         android:theme="@style/Theme.HealthEasy"
         tools:targetApi="31">
         <activity
+            android:name=".SupportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyPaymentsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HealthEasy" /> <!-- Other Activities -->
+        <activity
+            android:name=".PasswordChangeActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

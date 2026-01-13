@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/lighterWhiteColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/blueColor"
+        android:paddingHorizontal="20dp">
+
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_menu_back"
+            app:tint="@color/whiteColor"
+            android:rotation="90"
+            android:clickable="true"
+            android:contentDescription="Back Icon"/>
+
+        <!-- Heading for Doctors -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="My Payments"
+            android:textColor="@color/whiteColor"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <!-- Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Message when no payments are found -->
+        <TextView
+            android:id="@+id/noPaymentsMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No payment details found."
+            android:visibility="gone"
+            android:textSize="16sp"
+            android:textColor="@color/blackColor"
+            android:gravity="center"
+            android:layout_marginTop="20dp" />
+
+        <!-- RecyclerView for Payment Details -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPayments"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+</LinearLayout>

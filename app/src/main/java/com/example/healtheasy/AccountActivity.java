@@ -9,18 +9,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
 public class AccountActivity extends AppCompatActivity {
-    private ImageView profileSectionBtn, backBtn, homeTab, favTab, msgTab, notifyTab, accountTab; // Footer Section
-    private LinearLayout logoutSection;
+    private ImageView profileSectionBtn, backBtn, homeTab, favTab, msgTab, notifyTab, accountTab, logoutSection, changePasswordSection, supportTab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
+
+        ImageView paymentSectionBtn = findViewById(R.id.paymentSectionBtn);
+        paymentSectionBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, MyPaymentsActivity.class);
+            startActivity(intent);
+        });
 
         accountTab = findViewById(R.id.accountTab);
         // Set tint color for accountTab to blueColor
@@ -33,8 +37,14 @@ public class AccountActivity extends AppCompatActivity {
         });
 
         // Logout section click listener
-        logoutSection = findViewById(R.id.logoutSection);
+        logoutSection = findViewById(R.id.logoutSectionBtn);
         logoutSection.setOnClickListener(v -> showLogoutConfirmationDialog());
+
+        changePasswordSection = findViewById(R.id.changePasswordBtn);
+        changePasswordSection.setOnClickListener(v -> {
+            Intent intent = new Intent(AccountActivity.this, PasswordChangeActivity.class);
+            startActivity(intent); // Launch the PasswordChangeActivity
+        });
 
         homeTab = findViewById(R.id.homeTab);
         homeTab.setOnClickListener(v -> {
@@ -50,6 +60,12 @@ public class AccountActivity extends AppCompatActivity {
         favTab.setOnClickListener(v -> {
             Intent intent = new Intent(AccountActivity.this, FavouritesActivity.class);
             intent.putExtra("allDoctors", allDoctors);
+            startActivity(intent);
+        });
+
+        supportTab = findViewById(R.id.supportSectionBtn);
+        supportTab.setOnClickListener(v -> {
+            Intent intent = new Intent(AccountActivity.this, SupportActivity.class);
             startActivity(intent);
         });
 
@@ -84,4 +100,6 @@ public class AccountActivity extends AppCompatActivity {
 
         dialog.show();
     }
+
+
 }

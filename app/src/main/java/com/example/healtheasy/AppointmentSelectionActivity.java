@@ -1,6 +1,7 @@
 package com.example.healtheasy;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -80,30 +81,78 @@ public class AppointmentSelectionActivity extends AppCompatActivity {
 
         backBtn.setOnClickListener(v -> onBackPressed());
 
+//        setAppointmentBtn.setOnClickListener(v -> {
+//            if (selectedDate == null && selectedTimeSlot == null) {
+//                Toast.makeText(this, "Please select date and time slot", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            else if (selectedDate == null) {
+//                Toast.makeText(this, "Please select a date", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            else if (selectedTimeSlot == null) {
+//                Toast.makeText(this, "Please select a time slot", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            else if (selectedDate != null && selectedTimeSlot != null) {
+//                String appointmentDetails = "Appointment set for \n" + selectedDate + " at " + selectedTimeSlot;
+//                Toast.makeText(this, appointmentDetails, Toast.LENGTH_LONG).show();
+//
+//                Intent intent = new Intent(AppointmentSelectionActivity.this, PaymentActivity.class);
+//                intent.putExtra("doctor", doctor);
+//                startActivity(intent);
+//            }
+//
+//            else if (flag == 1) {
+//                Toast.makeText(this, "Please select a date from available weekdays only", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
         setAppointmentBtn.setOnClickListener(v -> {
             if (selectedDate == null && selectedTimeSlot == null) {
                 Toast.makeText(this, "Please select date and time slot", Toast.LENGTH_SHORT).show();
-            }
-
-            else if (selectedDate == null) {
+            } else if (selectedDate == null) {
                 Toast.makeText(this, "Please select a date", Toast.LENGTH_SHORT).show();
-            }
-
-            else if (selectedTimeSlot == null) {
+            } else if (selectedTimeSlot == null) {
                 Toast.makeText(this, "Please select a time slot", Toast.LENGTH_SHORT).show();
-            }
+            } else {
+                // Fetch logged-in user name
+                SharedPreferences preferences = getSharedPreferences("userPrefs", MODE_PRIVATE);
+                String userName = preferences.getString("username", "");
 
-            else if (selectedDate != null && selectedTimeSlot != null) {
-                String appointmentDetails = "Appointment set for \n" + selectedDate + " at " + selectedTimeSlot;
-                Toast.makeText(this, appointmentDetails, Toast.LENGTH_LONG).show();
+                if (userName.isEmpty()) {
+                    Toast.makeText(this, "User not logged in. Please log in first.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                Intent intent = new Intent(AppointmentSelectionActivity.this, PaymentActivity.class);
-                intent.putExtra("doctor", doctor);
-                startActivity(intent);
-            }
+                // Log the values for debugging
+                Log.d("Debug", "Doctor ID: " + doctor.getId());
+                Log.d("Debug", "Username: " + userName);
+                Log.d("Debug", "Selected Date: " + selectedDate);
+                Log.d("Debug", "Selected Time Slot: " + selectedTimeSlot);
+                Log.d("Debug", "Specialization: " + doctor.getSpecialization());
+                Log.d("Debug", "Amount: " + doctor.getFee());
 
-            else if (flag == 1) {
-                Toast.makeText(this, "Please select a date from available weekdays only", Toast.LENGTH_SHORT).show();
+                // Save appointment to the database
+                Database db = new Database(this, "HealthEasy", null, 4);
+                boolean success = db.saveAppointment(
+                        doctor.getId(),
+                        userName,
+                        doctor.getSpecialization(),
+                        doctor.getFee(),
+                        selectedDate,
+                        selectedTimeSlot
+                );
+
+                if (success) {
+                    Toast.makeText(this, "Appointment booked successfully!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(AppointmentSelectionActivity.this, PaymentActivity.class);
+                    intent.putExtra("doctor", doctor);
+                    intent.putExtra("selectedDate", selectedDate);
+                    intent.putExtra("selectedTimeSlot", selectedTimeSlot);
+                    startActivity(intent);                } else {
+                    Toast.makeText(this, "Failed to save appointment. Try again.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

@@ -242,7 +242,9 @@
         android:textSize="16sp"
         android:textColor="@color/blackColor"
         android:layout_marginTop="5dp"
-        android:gravity="start"/>
+        android:gravity="start"
+        android:justificationMode="inter_word"
+        android:lineSpacingExtra="2dp"/>
 
     <!-- Availability Section -->
     <TextView
@@ -264,7 +266,9 @@
         android:textSize="16sp"
         android:textColor="@color/blackColor"
         android:layout_marginTop="5dp"
-        android:gravity="start"/>
+        android:gravity="start"
+        android:justificationMode="inter_word"
+        android:lineSpacingExtra="2dp"/>
 
     <!-- Consultation Fee Section -->
     <TextView

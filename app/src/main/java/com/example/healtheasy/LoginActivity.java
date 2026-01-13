@@ -3,6 +3,7 @@ package com.example.healtheasy;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.text.TextUtils;
 import android.widget.Toast;
@@ -23,6 +24,10 @@ import android.text.method.PasswordTransformationMethod;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 
 public class LoginActivity extends AppCompatActivity{
@@ -103,6 +108,18 @@ public class LoginActivity extends AppCompatActivity{
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("username", username);
                     editor.apply();
+
+                    String lastLoginTime = db.getLastLoginTime(username);
+                    if (lastLoginTime != null) {
+                        long loginAtMillis = Long.parseLong(lastLoginTime); // Convert timestamp string to milliseconds
+                        String formattedTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+                                .format(new Date(loginAtMillis)); // Format the timestamp
+                        Log.d("LoginActivity", "User " + username + " logged in at: " + formattedTime);
+                        Toast.makeText(LoginActivity.this, "Last login: " + formattedTime, Toast.LENGTH_LONG).show();
+                    } else {
+                        Log.d("LoginActivity", "User " + username + " logged in for the first time.");
+                        Toast.makeText(LoginActivity.this, "Welcome! This is your first login.", Toast.LENGTH_LONG).show();
+                    }
 
                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                     finish();

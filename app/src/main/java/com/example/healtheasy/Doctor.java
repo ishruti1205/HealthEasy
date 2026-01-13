@@ -2,6 +2,7 @@ package com.example.healtheasy;
 import java.io.Serializable;
 
 public class Doctor implements Serializable {
+    private int id;
     private String name;
     private String specialization;
     private String location;
@@ -13,9 +14,10 @@ public class Doctor implements Serializable {
     private String timeSlot;
 
     // Constructor
-    public Doctor(int imageResource, String name, String specialization, String degree, String location,
+    public Doctor(int id, int imageResource, String name, String specialization, String degree, String location,
                   int patients, String experience, double rating, String hospital, double fee,
                   String day1, String day2, String timeSlot) {
+        this.id = id;
         this.imageResource = imageResource;
         this.name = name;
         this.specialization = specialization;
@@ -32,6 +34,9 @@ public class Doctor implements Serializable {
     }
 
     // Getters for attributes
+    public int getId(){
+        return id;
+    }
     public int getImageResource() {
         return imageResource;
     }
