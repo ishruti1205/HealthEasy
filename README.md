@@ -44,12 +44,12 @@
 ---
 
 ## Screenshots
-<img src="Screen Recordings & Screenshots/1.png" height = "400" width="200"/>  <img src="Screenshots/2.png" height = "400" width="200"/>  <img src="Screenshots/3.png" height = "400" width="200"/>  <img src="Screenshots/4.png" height = "400" width="200"/>  
-<img src="Screenshots/5.png" height = "400" width="200"/>  <img src="Screenshots/6.png" height = "400" width="200"/>  <img src="Screenshots/7.png" height = "400" width="200"/>  <img src="Screenshots/8.png" height = "400" width="200"/>  
-<img src="Screenshots/9.png" height = "400" width="200"/>  <img src="Screenshots/10.png" height = "400" width="200"/>  <img src="Screenshots/11.png" height = "400" width="200"/> <img src="Screenshots/12.png" height = "400" width="200"/>
-<img src="Screenshots/13.png" height = "400" width="200"/>  <img src="Screenshots/14.png" height = "400" width="200"/>  <img src="Screenshots/15.png" height = "400" width="200"/> <img src="Screenshots/16.png" height = "400" width="200"/>
-<img src="Screenshots/17.png" height = "400" width="200"/>  <img src="Screenshots/18.png" height = "400" width="200"/>  
-<img src="Screenshots/19.png" height = "200" width="400"/> <img src="Screenshots/20.png" height = "200" width="400"/> <img src="Screenshots/21.png" height = "200" width="400"/>
+<img src="Screen Recordings & Screenshots/1.png" height = "400" width="200"/>  <img src="Screen Recordings & Screenshots/2.png" height = "400" width="200"/>  <img src="Screen Recordings & Screenshots/3.png" height = "400" width="200"/>  <img src="Screen Recordings & Screenshots/4.png" height = "400" width="200"/>  
+<img src="Screen Recordings & Screenshots/5.png" height = "400" width="200"/>  <img src="Screen Recordings & Screenshots/6.png" height = "400" width="200"/>  <img src="Screen Recordings & Screenshots/7.png" height = "400" width="200"/>  <img src="Screen Recordings & Screenshots/8.png" height = "400" width="200"/>  
+<img src="Screen Recordings & Screenshots/9.png" height = "400" width="200"/>  <img src="Screen Recordings & Screenshots/10.png" height = "400" width="200"/>  <img src="Screen Recordings & Screenshots/11.png" height = "400" width="200"/> <img src="Screen Recordings & Screenshots/12.png" height = "400" width="200"/>
+<img src="Screen Recordings & Screenshots/13.png" height = "400" width="200"/>  <img src="Screen Recordings & Screenshots/14.png" height = "400" width="200"/>  <img src="Screen Recordings & Screenshots/15.png" height = "400" width="200"/> <img src="Screen Recordings & Screenshots/16.png" height = "400" width="200"/>
+<img src="Screen Recordings & Screenshots/17.png" height = "400" width="200"/>  <img src="Screen Recordings & Screenshots/18.png" height = "400" width="200"/>  
+<img src="Screen Recordings & Screenshots/19.jpg" height = "200" width="400"/> <img src="Screen Recordings & Screenshots/20.jpg" height = "200" width="400"/> <img src="Screen Recordings & Screenshots/21.jpg" height = "200" width="400"/>
 
 ### Screen Recordings
 
